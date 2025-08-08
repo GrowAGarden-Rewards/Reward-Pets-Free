@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GAG REWARDS!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        #4b2e0e,
+        #4b2e0e 10px,
+        #3a2108 10px,
+        #3a2108 20px
+      );
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: lime;
+      font-size: 18px;
+      text-shadow: 0 0 5px #00ff00;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 10px;
+      color: #ccc;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .main {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .panel {
+      background: #3b2005;
+      border: 3px solid #d4aa4f;
+      padding: 15px;
+      width: 270px;
+      box-shadow: 0 0 10px #000;
+    }
+
+    .title {
+      font-size: 12px;
+      color: yellow;
+      margin-bottom: 15px;
+    }
+
+    .reward {
+      margin-bottom: 15px;
+      background: #1e0e03;
+      padding: 8px;
+      border: 2px solid #c09040;
+    }
+
+    .reward img {
+      width: 70px;
+      height: 70px;
+      image-rendering: pixelated;
+      border: 2px solid white;
+      box-shadow: 0 0 8px white;
+    }
+
+    .reward-name {
+      margin-top: 8px;
+      font-size: 10px;
+      color: white;
+    }
+
+    .log-title {
+      font-size: 10px;
+      color: lime;
+      margin-bottom: 10px;
+    }
+    
+    .claim-btn {
+ display: block;
+  width: 100%;
+  font-size: 10px;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  background: #A97B2C;
+  color: #000;
+  box-shadow: 0 0 10px #FFFFFC, 0 0 20px #C4B82F;
+  transition: transform 0.2s, background 0.3s;
+    }
+
+    .log-box {
+      background: #111;
+      border: 2px solid #444;
+      padding: 1px;
+      height: 200px;
+      overflow-y: auto;
+      font-size: 10px;
+      text-align: left;
+    }
+
+    .log-entry {
+      color: #00ffcc;
+      margin-bottom: 5px;
+      text-shadow: 1px 1px black;
+      white-space: nowrap;
+    }
+    "m"
+  </style>
+</head>
+<body>
+  <h1>GROW A GARDEN</h1>
+  <p>CLAIM YOUR REWARDS NOW! ALMOST 5K PEOPLE ATTEND TO GIVEAWAYS!</p>
+
+  <div class="main">
+    <!-- LEFT PANEL: REWARDS -->
+    <div class="panel">
+      <div class="title"> GIVEAWAY REWARDS!</div>
+
+      <div class="reward"
+        <img src="images (27).jpeg" alt="Disco Bee">
+        <div class="reward-name">DISCO BEE</div>
+      </div>
+
+      <div class="reward">
+        <img src="images (25).jpeg" alt="Kitsune">
+        <div class="reward-name">KITSUNE</div>
+      </div>
+
+      <div class="reward">
+        <img src="download (3).jpeg" alt="Raccoon">
+        <div class="reward-name">RACCOON</div>
+      </div>
+          <a href="https://www.robiox.com.kz/games/126884695634066/Grow-a-Garden?privateServerLinkCode=50082290784809189663419973724474" 
+       class="claim-btn" target="_blank">
+       CLAIM REWARD
+    </a>
+    </div>
+
+    
+    <!-- RIGHT PANEL: LOG -->
+    <div class="panel">
+      <div class="log-title">LIVE CLAIMERS!</div>
+      <div class="log-box" id="logBox">
+        <!-- Auto-generated logs go here -->
+    </div>
+  </div>
+
+  <script>
+    const names = [
+      "xJandelYT", "NoobMaster22", "LegendBuilder", "ProGamer59420",
+      "PixelFarmer", "GrowHero", "RainGrower", "justin22", "tokizawagh",
+      "Gahsyiui123", "AintNoWayyy", "Redmiyhu88", " xihhhaj", "ainnowayyyy", " Ziziontop", "isikshebbus", " shiiiinwvj", "dicheade", "sigbin17633", " juiceldll", "sheckell", " 602jjsi", "c00lKid12", " kaidenYT12", "shittyO872", " zizi999", "ZOOIIIMAN", " 299KKK91", "storage192828282", " sighinattack1991", "askalgods91", " boboampt181", "ggsgs0018", "sanaoltanga01019", " dipshu" 
+    ];
+const rewards = ["Kitsune", "Raccoon", "Disco bee"];
+
+    function getTime() {
+      const now = new Date();
+      return now.toLocaleTimeString();
+    }
+
+    function autoClaimReward() {
+      const logBox = document.getElementById("logBox");
+      const name = names[Math.floor(Math.random() * names.length)];
+      const reward = rewards[Math.floor(Math.random() * rewards.length)];
+      const time = getTime();
+      const entry = document.createElement("div");
+      entry.className = "log-entry";
+      entry.innerText = `📀 ${name} claimed ${reward}\n${time}
+      ______________________________`;
+      logBox.prepend(entry);
+    }
+
+    // Auto-generate a claim every 2 seconds
+    setInterval(autoClaimReward, 2000);
+  </script>
+</body>
